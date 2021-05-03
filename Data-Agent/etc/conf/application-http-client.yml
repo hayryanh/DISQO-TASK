@@ -1,0 +1,33 @@
+feign:
+  httpclient:
+    enabled: false
+    disable-ssl-validation: true
+  okhttp:
+    enabled: true
+  client:
+    config:
+      defailt:
+        connectionTimeout: {{APP_HTTP_CONNECTION_TIMEOUT}}
+        readTimeout: {{APP_HTTP_CONNECTION_TIMEOUT}}
+        loggerLevel: {{APP_HTTP_LOG_LEVEL}}
+      kinesis:
+        connectionTimeout: {{APP_HTTP_DEFERRED_CONNECTION_TIMEOUT}}
+        readTimeout: {{APP_HTTP_DEFERRED_CONNECTION_TIMEOUT}}
+---
+context:
+  kinesis-data-pipe:  test/
+
+---
+client:
+  gateway:
+    url: {{APP_HTTP_CLIENT_GATEWAY_URL}}
+  retry:
+    period: {{APP_HTTP_CLIENT_RETRY_PERIOD}}
+    max-period: {{APP_HTTP_CLIENT_RETRY_MAX_PERIOD}}
+    max-attempts: {{APP_HTTP_CLIENT_RETRY_MAX_ATTEMPTS}}
+  config:
+    kinesis:
+      id: kinesis
+      url: ${client.gateway.url}
+      path: ${context.kinesis-data-pipe}
+    authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkZWVmOTc1LTNjMzYtNDRhYy1iMjM3LTkwYzdkNTNjODExZSIsInVzZXJJZCI6NTM0NDIxOSwidGVhbUlkIjowLCJjbG91ZEFnZW50RW5hYmxlZCI6dHJ1ZSwiaXYiOiJHMWdEWTkxYWxDWHJsN0YvcWo3VzhRPT0iLCJhbGdvIjoiYWVzLTEyOCIsImlhdCI6MTYxOTk0NTczMCwiZXhwIjoxNjE5OTQ3NTMwfQ.Xwz__kYwIac4d7zMaupXUtREAW48IzNMw3N0r-GB2DQ"

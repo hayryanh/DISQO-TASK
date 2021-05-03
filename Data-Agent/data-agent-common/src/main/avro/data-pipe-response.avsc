@@ -1,0 +1,43 @@
+{
+  "name": "GenDataPipeResponse",
+  "type": "record",
+  "namespace": "com.data.agent.model.pipe",
+  "fields": [
+    {
+      "name": "FailedRecordCount",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "Records",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "Record",
+          "type": "record",
+          "fields": [
+            {
+              "name": "SequenceNumber",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "ShardId",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

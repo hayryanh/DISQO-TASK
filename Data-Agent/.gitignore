@@ -1,0 +1,14 @@
+**/.idea/
+**/*.iml
+**/*.log
+**/*.zip
+**/*.class
+**/build/
+**/target/
+**/bin/
+*.tmp
+**/.settings/
+**/.loadpath/
+**/.classpath/
+**/*.project
+**/*.prefs

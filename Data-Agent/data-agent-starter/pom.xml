@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.data.agent</groupId>
+        <artifactId>data-agent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../data-agent-bom</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>data-agent-starter</artifactId>
+    <name>Data-Agent-Starter</name>
+
+    <profiles>
+        <profile>
+            <id>develop</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <build.profile.id>lcl1</build.profile.id>
+            </properties>
+            <build>
+                <filters>
+                    <filter>../cicd/property/dictionary.${build.profile.id}.properties</filter>
+                </filters>
+                <resources>
+                    <resource>
+                        <filtering>true</filtering>
+                        <directory>../etc/conf</directory>
+                        <includes>
+                            <include>*.properties</include>
+                            <include>*.xml</include>
+                            <include>*.yml</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>deploy</id>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>../etc/conf</directory>
+                        <excludes>
+                            <exclude>*.properties</exclude>
+                            <exclude>*.xml</exclude>
+                            <exclude>*.yml</exclude>
+                        </excludes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <finalName>data-agent-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>exec</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.data.agent</groupId>
+            <artifactId>data-agent-services</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.data.agent</groupId>
+            <artifactId>data-agent-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>

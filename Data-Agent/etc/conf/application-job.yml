@@ -1,0 +1,6 @@
+---
+data-publisher-job:
+  enabled: true
+  cron: "{{APPLICATION_DATA_PUBLISHER_JOB_CRON}}"
+  retrty-delay: {{APP_PUBLISHER_JOB_RETRY_DELAY}}
+  retries: {{APP_PUBLISHER_JOB_RETRY}}

@@ -1,0 +1,20 @@
+server:
+  port: {{APP_SERVER_PORT}}
+  http2:
+    enabled: true
+
+---
+spring:
+  application:
+    name: data-agent
+  main:
+    banner-mode: "{{APP_SPRING_BANNER}}"
+    allow-bean-definition-overriding: true
+  profiles:
+    active: {{APP_RUNTIME_MODE}}
+    include: http-client, job
+
+---
+reactor:
+  debug:
+    enabled: {{APP_REACTOR_DEBUG_ENABLED}}

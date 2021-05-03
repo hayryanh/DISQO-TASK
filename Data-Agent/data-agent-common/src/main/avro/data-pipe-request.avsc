@@ -1,0 +1,67 @@
+{
+  "name": "DataPipe",
+  "type": "record",
+  "namespace": "com.data.agent.model.pipe.request",
+  "fields": [
+    {
+      "name": "Records",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "Record",
+          "type": "record",
+          "fields": [
+            {
+              "name": "userId",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "eventTypeId",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "screenWidth",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "screenHeight",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "viewSource",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "actionTimeStamp",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

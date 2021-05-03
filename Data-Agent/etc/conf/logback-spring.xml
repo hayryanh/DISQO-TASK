@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <jmxConfigurator/>
+
+    <property resource="logback.properties"/>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>${consoleLoggerPattern}</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${destination}/${fileName}</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>${fileLoggerPattern}</Pattern>
+        </encoder>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${maxFileSize}</maxFileSize>
+        </triggeringPolicy>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${fileNamePattern}</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender class="ch.qos.logback.classic.AsyncAppender" name="AsyncAppender">
+        <appender-ref ref="RollingFile"/>
+    </appender>
+
+    <root level="${level}" additivity="false">
+        <appender-ref ref="AsyncAppender"/>
+        <appender-ref ref="Console"/>
+    </root>
+</configuration>

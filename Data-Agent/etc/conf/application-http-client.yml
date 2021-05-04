@@ -30,4 +30,3 @@ client:
       id: kinesis
       url: ${client.gateway.url}
       path: ${context.kinesis-data-pipe}
-    authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkZWVmOTc1LTNjMzYtNDRhYy1iMjM3LTkwYzdkNTNjODExZSIsInVzZXJJZCI6NTM0NDIxOSwidGVhbUlkIjowLCJjbG91ZEFnZW50RW5hYmxlZCI6dHJ1ZSwiaXYiOiJHMWdEWTkxYWxDWHJsN0YvcWo3VzhRPT0iLCJhbGdvIjoiYWVzLTEyOCIsImlhdCI6MTYxOTk0NTczMCwiZXhwIjoxNjE5OTQ3NTMwfQ.Xwz__kYwIac4d7zMaupXUtREAW48IzNMw3N0r-GB2DQ"

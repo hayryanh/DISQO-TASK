@@ -1,0 +1,26 @@
+{
+    "Role": {
+        "Path": "/service-role/",
+        "RoleName": "KinesisFirehoseServiceRole-warehouse-del-us-west-2-1619627083670",
+        "RoleId": "AROA3UXDULZRJNRUO2R2J",
+        "Arn": "arn:aws:iam::800415047266:role/service-role/KinesisFirehoseServiceRole-warehouse-del-us-west-2-1619627083670",
+        "CreateDate": "2021-04-28T16:25:49+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "firehose.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {
+            "LastUsedDate": "2021-05-04T10:48:57+00:00",
+            "Region": "us-west-2"
+        }
+    }
+}

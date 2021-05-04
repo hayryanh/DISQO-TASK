@@ -1,0 +1,19 @@
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "hayk.hayryan",
+            "UserId": "AIDA3UXDULZRPGU4XSITI",
+            "Arn": "arn:aws:iam::800415047266:user/hayk.hayryan",
+            "CreateDate": "2020-04-17T00:21:53+00:00",
+            "PasswordLastUsed": "2020-04-17T00:24:44+00:00"
+        }
+    ],
+    "Group": {
+        "Path": "/",
+        "GroupName": "Developers",
+        "GroupId": "AGPA3UXDULZRLC63UBSFX",
+        "Arn": "arn:aws:iam::800415047266:group/Developers",
+        "CreateDate": "2020-04-17T00:20:11+00:00"
+    }
+}

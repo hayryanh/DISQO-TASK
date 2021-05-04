@@ -1,0 +1,28 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "kinesis-api-gateway",
+        "RoleId": "AROA3UXDULZRIMFBGLWRZ",
+        "Arn": "arn:aws:iam::800415047266:role/kinesis-api-gateway",
+        "CreateDate": "2021-04-27T11:36:26+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "",
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "apigateway.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "Description": "Allows API Gateway to put records to kinesis",
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {
+            "LastUsedDate": "2021-05-04T01:01:15+00:00",
+            "Region": "us-west-2"
+        }
+    }
+}

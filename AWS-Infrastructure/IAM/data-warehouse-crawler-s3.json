@@ -1,0 +1,24 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "data-warehouse-crawler-s3",
+        "RoleId": "AROA3UXDULZRCRQEXFX6V",
+        "Arn": "arn:aws:iam::800415047266:role/data-warehouse-crawler-s3",
+        "CreateDate": "2021-04-29T18:53:18+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "s3.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "Description": "Allows S3 to call AWS services on your behalf.",
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {}
+    }
+}

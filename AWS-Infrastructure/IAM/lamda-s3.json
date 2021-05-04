@@ -1,0 +1,26 @@
+{
+    "Role": {
+        "Path": "/service-role/",
+        "RoleName": "Lambda-S3",
+        "RoleId": "AROA3UXDULZRIIXSGIUZK",
+        "Arn": "arn:aws:iam::800415047266:role/service-role/Lambda-S3",
+        "CreateDate": "2021-04-26T17:11:36+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "lambda.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {
+            "LastUsedDate": "2021-05-03T18:55:58+00:00",
+            "Region": "us-west-2"
+        }
+    }
+}

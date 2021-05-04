@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "${client.config.kinesis.id}", url = "${client.config.kinesis.url}")
 public interface DataPipeFeignPublisher {
 
-    @RequestMapping(method = RequestMethod.PUT, path = "${client.config.kinesis.path}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, path = "${client.config.kinesis.path}", produces = MediaType.APPLICATION_JSON_VALUE)
     GenDataPipeResponse publishRecord(@RequestBody final DataPipeRequestModel request);
 }
